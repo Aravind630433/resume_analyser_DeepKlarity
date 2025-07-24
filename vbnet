@@ -1,0 +1,18 @@
+resume-analyzer/
+├── backend/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── uploads/
+│   ├── app.js
+│   ├── db.js
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.js
+│   │   ├── index.js
+├── sample_data/
+├── screenshots/
+├── README.md
