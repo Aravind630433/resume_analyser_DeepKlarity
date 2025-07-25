@@ -10,7 +10,7 @@ function UploadResume() {
     const formData = new FormData();
     formData.append('resume', file);
     try {
-      const res = await axios.post('http://localhost:5000/api/analyze', formData);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/analyze`, formData);
       setResult(res.data);
     } catch (err) {
       alert("Upload failed. Check backend connection.");
