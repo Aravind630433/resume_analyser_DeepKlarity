@@ -1,24 +1,27 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const resumeRoutes = require('./routes/resumeRoutes');
+
+// Load environment variables
+dotenv.config();
+
 const app = express();
-const resumeRoutes = require("./routes/resumeRoutes");
-require("dotenv").config();
-const db = require("./db");
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api", resumeRoutes);
+app.use('/api', resumeRoutes);
 
-// Health Check
-app.get("/api/health", (req, res) => {
-  res.json({ status: "ok" });
+// Health check
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok' });
 });
 
-// Start Server
-const PORT = process.env.PORT || 10000;
+// Start server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
